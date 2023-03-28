@@ -6,9 +6,9 @@
 ## Требования
 
 - PHP 7.4
-- [WordPress 6.1 и выше](http://wordpress.org/)
-- [ACF Pro 5.12.3 и выше](https://www.advancedcustomfields.com/pro/)
-- [Leyka версии 3.26 и выше](https://leyka.org/)
+- WordPress 6.1 и выше [официальный сайт]](http://wordpress.org/)
+- ACF Pro 5.12.3 и выше [официальный сайт](https://www.advancedcustomfields.com/pro/)
+- Leyka версии 3.26 и выше [официальный сайт](https://leyka.org/)
 
 
 ## Установка
