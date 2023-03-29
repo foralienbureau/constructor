@@ -1,0 +1,15 @@
+/* border */
+.fcon-block-border {
+
+    &.alignwide {
+        @include align-container();
+    }
+
+    &.alignfull {
+        @include align-full();
+    }
+}
+
+.custom-border {
+    width: 100%;
+}
