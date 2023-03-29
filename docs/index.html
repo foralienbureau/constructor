@@ -1,47 +1,136 @@
 <!DOCTYPE html>
-<html lang="ru-RU">
+<html lang="ru-RU" data-theme="light">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="utf-8">
         <title>Конструктор фандрайзинговых лендингов</title>
         <meta name="description" content="Плагин для WordPress, с помощью которого можно создавать красивые эффективные страницы для сбора пожертвований">
+        <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css">
+        <style>
+            [data-theme="light"],
+            :root:not([data-theme="dark"]) {
+              --primary: #e53935;
+              --primary-hover: #d32f2f;
+              --primary-focus: rgba(229, 57, 53, 0.125);
+              --primary-inverse: #FFF;
+            }
+
+            @media (min-width: 1200px) {
+                .container {
+                    max-width: 960px;
+                }
+            }
+
+            .header {
+                text-align: center;
+            }
+
+            hgroup .page-header__tagline {
+                max-width: 60ch;
+                margin-left: auto;
+                margin-right: auto;
+                font-size: 1.2rem;
+                margin-top: 0.6rem;
+            }
+
+            .page-header__links {
+                display: flex;
+                flex-flow: row;
+                justify-content: center;
+            }
+
+            .nav-links a {
+                padding: 10px 20px;
+                min-width: 180px;
+                text-align: center;
+            }
+
+            .page-header {
+                background: var(--muted-border-color);
+            }
+
+            .grid article {
+                margin-top: 0;
+            }
+
+            .page-footer {
+                border-top: 1px solid var(--form-element-border-color);
+            }
+        </style>
     </head>
     <body>
         <header class="page-header" role="banner">
             <div class="container">
-                <h1 class="page-header__name">Конструктор фандрайзинговых лендингов</h1>
-
-                <div class="page-header__tagline">Плагин для WordPress, с помощью которого можно создавать красивые 'развернутые' страницы для сбора пожертвований</div>
+                <hgroup class="header">
+                    <h1 class="page-header__name">Конструктор фандрайзинговых лендингов</h1>
+                    <h3 class="page-header__tagline">Плагин для WordPress, с помощью которого можно создавать красивые &laquo;развернутые&raquo; страницы для сбора пожертвований</h3>
+                </hgroup>
                 
                 <nav class="page-header__links">
-                    <a href="#" target="_blank">Скачать</a>
-                    <a href="#" target="_blank">Документация</a>
+                    <ul class="nav-links">
+                        <li><a href="#" target="_blank" role="button">Скачать</a></li>
+                        <li><a href="#" target="_blank" role="button" class="secondary">Документация</a></li>
+                    </ul>
                 </nav>
             </div>
         </header>
 
         <main class="page-content" role="main">
             <div class="container">
-                <p>Конструктор предназначен для быстрого создания фандрайзинговых онлайн-акций на WordPress. </p>
+                <h2>Конструктор предназначен для быстрого создания фандрайзинговых онлайн-акций на WordPress</h2>
 
-                <p>Примеры акций, созданных с помощью Конструктора:</p>
+                <div class="grid">
+                    <div>
+                        <article>
+                            <h4>Продукты для бедных</h4>
+                            <p>Соберем средства на продуктовые наборы для самых незащищенных: стариков, инвалидов, малоимущих семей.</p>
+                            <footer>
+                                <a href="https://www.miloserdie.ru/action/eda/" target="_blank">Страница лендинга</a>
+                            </footer>
+                        </article>
+                    </div>
+                    <div>
+                        <article>
+                            <h4>Второй пример</h4>
+                            <p>Соберем средства на продуктовые наборы для самых незащищенных: стариков, инвалидов, малоимущих семей.</p>
+                            <footer>
+                                <a href="https://www.miloserdie.ru/action/eda/" target="_blank">Страница лендинга</a>
+                            </footer>
+                        </article>
+                    </div>
+                </div>
 
-                <p>Он позволяет составить из стандартных блоков страницу-лендинг, объясняющую суть акции, мотивирующую жертвователей и дающую им возможность перечислить пожертвование.</p>
-
-                <p>Конструктор дает возможность быстро создавать лендинги с индивидуальным оформлением (например, под яркие рекламные кампании).</p>
+                <p>Он позволяет составить из стандартных блоков страницу-лендинг, объясняющую суть акции, мотивирующую жертвователей и дающую им возможность перечислить пожертвование. Конструктор дает возможность быстро создавать лендинги с индивидуальным оформлением (например, под яркие рекламные кампании).</p>
 
                 <p>Работа с Конструктором не требует сложных технических навыков. Необходимо базовое владение системой управления контентом WordPress.</p>
 
-                <p>Конструктор является расширением функционала плагина <a href="https://leyka.org/" target="_blank" rel="noopener">&laquo;Лейка&raquo;</a>, предоставляет больше возможностей для оформления страниц и интерактивные виджеты для улучшения UX сбора. 
+                <p>Конструктор является расширением функционала плагина <a href="https://leyka.org/" target="_blank" rel="noopener">&laquo;Лейка&raquo;</a>, предоставляет больше возможностей для оформления страниц и интерактивные виджеты для улучшения UX сбора.  Это инструмент с открытым исходным кодом.</p>
 
-                <p>Это инструмент с открытым кодом.</p>
+                <h2>Как использовать</h2>
+
+                <p>Код плагина предоставляется &laquo;как есть&raquo;, разработчики не осуществляют техническую поддержку и не отвечают за корректную работу модуля на отдельном сайте. Содержание и корректная работа сайта - ответственность их создателей.</p>
+
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="#" target="_blank" role="button">Скачать</a></li>
+                        <li><a href="#" target="_blank" role="button" class="secondary">Документация</a></li>
+                    </ul>
+                </nav>
+
             </div>
         </main>
 
-        <footer class="page-footer">
-            <div class="container">
-                <a href="#" target="_blank">Проект на GitHub</a>
+        <footer class="page-footer container">
+            <div class="grid">
+                <div>
+                    <p><small>Конструктор был создан порталом <a href="https://www.miloserdie.ru/" class="secondary" target="_blank">Милосердие.ru</a> в&nbsp;2023 году на&nbsp;средства <a href="https://xn--80afcdbalict6afooklqi5o.xn--p1ai/" class="secondary" target="_blank">Фонда президентских грантов</a>, разработчик - <a href="https://foralien.com/" class="secondary" target="_blank">Бюро Анны Ладошкиной</a>.</small></p>
+                </div>
+                <div>
+                    <figure><img src="/logos.png"></figure>
+                </div>
             </div>
+
+            <p><a href="https://github.com/foralienbureau/constructor" target="_blank">Проект на GitHub</a></p>
         </footer>
     </body>
 </html>
