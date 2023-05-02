@@ -36,17 +36,6 @@
                 text-align: left;
             }
 
-            @media (min-width: 1120px) {
-                h1, h3, .page-header__links {
-                    margin-left: 10rem;
-                }
-                hgroup figure {
-                    float: left;
-                    width: 8rem;
-                    margin-top: 0.5rem;
-                }
-            }
-
             hgroup .page-header__tagline {
                 max-width: 60ch;
                 margin-left: auto;
@@ -69,6 +58,19 @@
 
             .page-header {
                 background: var(--muted-border-color);
+            }
+
+            @media (min-width: 1120px) {
+                h1, 
+                hgroup .page-header__tagline, 
+                hgroup .page-header__links {
+                    margin-left: 10rem;
+                }
+                hgroup figure {
+                    float: left;
+                    width: 8rem;
+                    margin-top: 0.5rem;
+                }
             }
 
             .grid article {
