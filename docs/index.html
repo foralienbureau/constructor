@@ -15,7 +15,7 @@
         <meta property="og:description" content="Плагин для WordPress, с помощью которого можно создавать красивые эффективные страницы для сбора пожертвований">
         <meta property="og:type" content="website">
         <meta property="og:locale" content="ru_RU">
-        <!--<meta property="og:image" content="">-->
+        <meta property="og:image" content="/assets/constructor_smm.png">
 
         <style>
             [data-theme="light"],
@@ -33,7 +33,18 @@
             }
 
             .header {
-                text-align: center;
+                text-align: left;
+            }
+
+            @media (min-width: 1120px) {
+                h1, h3, .page-header__links {
+                    margin-left: 10rem;
+                }
+                hgroup figure {
+                    float: left;
+                    width: 8rem;
+                    margin-top: 0.5rem;
+                }
             }
 
             hgroup .page-header__tagline {
@@ -47,7 +58,7 @@
             .page-header__links {
                 display: flex;
                 flex-flow: row;
-                justify-content: center;
+                justify-content: left;
             }
 
             .nav-links a {
@@ -73,6 +84,7 @@
         <header class="page-header" role="banner">
             <div class="container">
                 <hgroup class="header">
+                    <figure><img src="/assets/сonstruсtor_logo.png"></figure>
                     <h1 class="page-header__name">Конструктор фандрайзинговых лендингов</h1>
                     <h3 class="page-header__tagline">Плагин для WordPress, с помощью которого можно создавать красивые &laquo;развернутые&raquo; страницы для сбора пожертвований</h3>
                 </hgroup>
