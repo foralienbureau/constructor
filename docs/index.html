@@ -45,9 +45,13 @@
             }
 
             .page-header__links {
-                display: flex;
-                flex-flow: row;
-                justify-content: left;
+                display: block;
+            }
+            nav, nav ul {
+                display: block;
+            }
+            nav li {
+                display: block;
             }
 
             .nav-links a {
@@ -71,6 +75,19 @@
                     width: 8rem;
                     margin-top: 0.5rem;
                 }
+
+                .page-header__links {
+                    display: flex;
+                    flex-flow: row;
+                    justify-content: left;
+                }
+                nav, nav ul {
+                    display: flex;
+                }
+                nav li {
+                    display: inline-block;
+                }
+
             }
 
             .grid article {
