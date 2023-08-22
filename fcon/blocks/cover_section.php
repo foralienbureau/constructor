@@ -65,6 +65,7 @@ $cover_desktop  = $cover['desktop'] ? wp_get_attachment_image_url((int)$cover['d
 $cover_mobile   = $cover['mobile'] ? wp_get_attachment_image_url((int)$cover['mobile'], 'full'): '';
 $cover_id       = uniqid('cover-');
 
+$mobile_color   =  $cover['mobile_number_color'] ? $cover['mobile_number_color'] : 'black';
 
 if( empty($cover_mobile) ) {
     $cover_mobile = $cover_desktop;
@@ -102,6 +103,7 @@ else {
     $closed = null;
 }
 
+
 $classes    = $base->get_css_classes_string( $specific  );
 $id         = $base->get_id_string();
 
@@ -126,6 +128,13 @@ $base_css   = array($prefix, 'mobile-'.$layout['mobile'], 'desktop-'.$layout['de
                 .cover_section__lead {
                      font-size: <?php echo esc_attr($lead['size_mobile']);?>px;
                 }
+
+                <?php if( $mobile_color == 'white' ) { ?>
+                    .thankyou-widget__text,
+                    .fcon-target-labels__needed {
+                        color: #fff;
+                    }
+                <?php } ?>
             }
             @media screen and (min-width: 640px) {
                 #<?php echo $cover_id;?> {
@@ -179,7 +188,7 @@ $base_css   = array($prefix, 'mobile-'.$layout['mobile'], 'desktop-'.$layout['de
                 } else { ?>
                     <div class="compact-widget <?php if( $has_target ) { echo 'has-target'; } ?>">
                         <?php if( $has_target ) { ?>
-                            <div class="compact-widget__target">
+                            <div class="compact-widget__target ">
                                 <?php
                                     $target = new Fcon_Target_Template( $landing );
                                     $target->print_markup();
@@ -220,16 +229,6 @@ $base_css   = array($prefix, 'mobile-'.$layout['mobile'], 'desktop-'.$layout['de
         </div></div>
 
     </div><!-- cover_section -->
-
-    <?php if( !$landing->is_open() ) { // closed state ?>
-        <div class="<?php echo esc_attr($prefix);?>__closed_mobile">
-            <?php  fcon_closed_widget( $closed['text'], $closed['button'] ); ?>
-        </div>
-    <?php } else if( !$landing->has_connected_campaign() ) { ?>
-        <div class="<?php echo esc_attr($prefix);?>__closed_mobile">
-            <?php  fcon_notice_widget(); ?>
-        </div>
-    <?php } ?>
 
     <!-- modal -->
     <?php if( $landing->is_open() ) { ?>

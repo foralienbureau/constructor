@@ -30,6 +30,7 @@
 
 .wp-block-cover {
     padding: $base*5 $base*6;
+
     
     &.alignwide {
         @include align-container();
@@ -41,6 +42,8 @@
     }
 
     @include for(large-screens) {
+
+        padding: $base*12 0 $base*13;
 
         &__inner-container {
             padding: 0 $base*4;

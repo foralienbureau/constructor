@@ -19,6 +19,11 @@
     > p + div, > div + p, > p + div.wp-block-cover {
         @include block-top-margin-base();
     } 
+
+    > div:not(.has-background-color).no-m {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
     
     > .no-m {
         margin-top: 0;

@@ -1,19 +1,4 @@
 /* cover_section */
-.the-content .fcon-block-cover_section {
-    
-}
-
-.fcon-block-cover_section {
-
-    @include upto(large-screens) {
-        &.has-target.state-open {
-            padding-bottom: 122px;
-        }
-    }
-}
-
-
-
 
 .cover_section {
     position: relative;
@@ -38,148 +23,30 @@
         position: relative;
         z-index: 10;
         @include align-container();
-    }
 
-
-    @include upto(large-screens) {
-        z-index: 200;
-        
-        &__title {
-            font-family: $title;
-            font-size: 50px;
-            margin-bottom: $base*4;
-        }
-
-        &__lead {
-            &.subtitle {
-                font-family: $title;
-                line-height: 1.2;
-            }
-
-            &.lead {
-                font-family: $text;
-                line-height: 1.5;
-                font-weight: 500;
-            }
-        }
-
-        &__content {
+        @include upto(large-screens) {
             padding-top: $base*15;
-            padding-bottom: $base*12;
+            padding-bottom: $base*5;
             height: 100vh;
         }
 
-        &__grid {
-            height: 100%;
+        @include for(large-screens) {
+            min-height: 100vh;
+            padding: 22vh 0 90px;
         }
+    }
 
-        &__header {
+    &__grid {
+        @include upto(large-screens) {
             height: 100%;
             display: flex;
             flex-flow: column;
         }
-
-        &__widget {
-            position: absolute;
-            bottom: 0;
-            height: 1px;
-            width: 100%;
-        }
-
-        &.mobile-variant_one &__header {
-            justify-content: space-between;
-        }
-
-        .state-open &.mobile-variant_one &__header {
-            padding-bottom: $base*8;
-        }
-
-        &.mobile-variant_two &__title {
-            margin-top: auto;
-        }
-
-        &__closed_mobile {
-            padding: $base*10 0;
-            background: $color-white;
-            position: relative;
-            &:after {
-                content: '';
-                width: calc(100vw - #{$scrollbar});
-                height: 1px;
-                background: $color-border;
-                position: absolute;
-                left: 50%;
-                bottom: 0;
-                transform: translateX(-50%);
-            }
-        }
-    }
-
-    .wpbutton.filled {
-        padding: 16px 8px;
-    }
-
-    @include upto(medium-screens) {
-        min-height: 100vh;
-
-        .state-error &__widget,
-        .state-closed &__widget {
-            display: none;
-        }
-    }
-
-    @include between(medium-screens, large-screens) {
-        min-height: 60vh;
-
-        .state-error &__widget,
-        .state-closed &__widget {
-            display: none; 
-        }
     }
 
     @include for(large-screens) {
-
-        &__content {
-            min-height: 100vh;
-            padding: 22vh 0 90px;
-        }
-
-        &__title {
-            font-family: $title;
-            font-size: 60px;
-            margin-bottom: $base*4;
-        }
-
-        &__lead {
-            &.subtitle {
-                font-family: $title;
-                line-height: 1.2;
-            }
-
-            &.lead {
-                font-family: $text;
-                line-height: 1.5;
-                font-weight: 500;
-            }
-        }
-
-        &__widget {
-            background: $color-white;
-            width: 375px;
-            border-radius: 2px;
-            border: 1px solid $color-border;
-            padding: $base*5;
-            &:empty {
-                opacity: 0;
-            }
-        }
-
         &.desktop-left &__grid {
             width: 60%;
-        }
-
-        &.desktop-left &__widget {
-            margin-top: $base*8;
         }
 
         &.desktop-right &__grid {
@@ -188,39 +55,136 @@
             justify-content: space-between;
             align-items: center;
         }
+    }
 
-        &.desktop-right &__widget {
-            flex: 0 0 auto;
+    &__widget {
+        @include upto(large-screens) {
+            margin-top: $base*4;
+        }
+
+        @include for(large-screens) {
+            background: $color-white;
+            width: 375px;
+            border-radius: 2px;
+            border: 1px solid $color-border;
+            padding: $base*5;
+
+            &:empty {
+                opacity: 0;
+            }
+        }
+    }
+
+    @include for(large-screens) {
+        &.desktop-left &__widget {
+            margin-top: $base*8;
         }
 
         &.desktop-right &__widget {
             flex: 0 0 auto;
         }
+    }
 
+    &__header {
+        @include upto(large-screens) {
+            display: flex;
+            flex-flow: column;
+            flex: 1 1 auto;
+        }
+    }
+
+    @include upto(large-screens) {
+        &.mobile-variant_one &__header {
+            justify-content: space-between;
+        }
+    }
+
+    @include for(large-screens) {
         &.desktop-right &__header {
             width: 60%;
             padding-bottom: $base*5;
         }
+    }
 
+    &__title {
+        font-family: $title;
+
+        @include upto(large-screens) {
+            font-size: 50px;
+        }
+
+        @include for(large-screens) {
+            font-size: 60px;
+        }
+    }
+
+    @include upto(large-screens) {
+        &.mobile-variant_two &__title {
+            margin-top: auto;
+        }
+    }
+
+    @include for(large-screens) {
         &.desktop-right &__title {
             margin-bottom: $base*6;
         }
+    }
 
-        &__closed_mobile {
+    &__lead {
+        margin-top: $base*4;
+
+        &.subtitle {
+            font-family: $title;
+            line-height: 1.2;
+        }
+
+        &.lead {
+            font-family: $text;
+            line-height: 1.5;
+            font-weight: 500;
+        }
+    }
+
+    .state-closed &__lead {
+        @include upto(large-screens) {
             display: none;
         }
+    }
+
+    .wpbutton.filled {
+        padding: 16px 8px;
+    }
+
+
+    @include upto(large-screens) {
+        z-index: 200;
+    }
+
+    @include upto(medium-screens) {
+        
+    }
+
+    @include between(medium-screens, large-screens) {
+        min-height: 60vh;
     }
 }
 
 .the-content h1.cover_section__title {
     line-height: 1;
+    margin-bottom: 0;
 }
 
 
 .thankyou-widget {
 
     &__text {
-        margin-bottom: $base*6;
+        @include upto(large-screens) {
+            margin-bottom: $base*4;
+        }
+
+        @include for(large-screens) {
+            margin-bottom: $base*6;
+        }
     }
 
     &__button {
@@ -242,8 +206,16 @@
 .notice-widget {
 
     &__text {
-        color: $color-error;
         font-size: 1.2em;
+
+        @include upto(large-screens) {
+            color: $color-white;
+        }
+    }
+
+    @include upto(large-screens) {
+        background: $basic_button;
+        padding: $base*4;
     }
 
     @include for(large-screens) {
@@ -256,13 +228,8 @@
     &__target {
         margin-bottom: $base*4;
     }
-
+    
     @include upto(large-screens) { 
-        &__target {
-            background: $color-white;
-            padding: $base*5.5 $base*5 $base*5;
-            margin: 14px -30px 0; /// TARGET
-        }
 
         &__form {
             background: transparent;
@@ -270,10 +237,6 @@
 
         .fcon-form {
             background: transparent;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: calc(100vw - #{$scrollbar});
             z-index: 200;
 
             &__title, &__amount, &__period {
@@ -281,11 +244,10 @@
             }
 
             &__submit {
-                padding: 0 $base*5 $base*2;
 
                 .fcon-donate-button {
                     width: 100%;
-                    padding: 18px 30px;
+                    padding: 20px 30px;
                     font-size: 19px;
                     max-height: none;
                 }

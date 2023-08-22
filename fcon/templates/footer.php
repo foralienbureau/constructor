@@ -12,7 +12,7 @@ $privacy = get_option('options_privacy_page');
 
 <footer class="fcon-footer fcon-container">
     <div class="fcon-footer__branding">
-        <a href="<?php home_url('/');?>" class="fcon-logo-link">
+        <a href="<?php echo home_url('/');?>" class="fcon-logo-link">
             <?php echo wp_get_attachment_image((int)$footer_logo, 'full'); ?>
         </a>
     </div>

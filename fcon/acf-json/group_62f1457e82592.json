@@ -6,6 +6,7 @@
             "key": "field_62f1457e85424",
             "label": "Контент",
             "name": "wpbutton",
+            "aria-label": "",
             "type": "group",
             "instructions": "",
             "required": 0,
@@ -21,6 +22,7 @@
                     "key": "field_62f1457e869b6",
                     "label": "Текст кнопки",
                     "name": "text",
+                    "aria-label": "",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -37,13 +39,47 @@
                     "maxlength": ""
                 },
                 {
-                    "key": "field_62f1457e869d8",
-                    "label": "Ссылка",
-                    "name": "link",
-                    "type": "url",
+                    "key": "field_6466857e5ac74",
+                    "label": "Тип",
+                    "name": "type",
+                    "aria-label": "",
+                    "type": "radio",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "modal": "Модальное окно с формой",
+                        "link": "Ссылка"
+                    },
+                    "default_value": "link",
+                    "return_format": "value",
+                    "allow_null": 0,
+                    "other_choice": 0,
+                    "layout": "horizontal",
+                    "save_other_choice": 0
+                },
+                {
+                    "key": "field_62f1457e869d8",
+                    "label": "Ссылка",
+                    "name": "link",
+                    "aria-label": "",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6466857e5ac74",
+                                "operator": "==",
+                                "value": "link"
+                            }
+                        ]
+                    ],
                     "wrapper": {
                         "width": "",
                         "class": "",
@@ -56,6 +92,7 @@
                     "key": "field_62f1457e869df",
                     "label": "Формат",
                     "name": "format",
+                    "aria-label": "",
                     "type": "select",
                     "instructions": "",
                     "required": 0,
@@ -98,5 +135,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1680068392
+    "modified": 1684440586
 }

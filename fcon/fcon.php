@@ -3,7 +3,7 @@
 Plugin Name: Fundraising Constructor
 Plugin URI: https://github.com/foralienbureau/
 Description: Create fundraising landing pages
-Version: 0.0.2
+Version: 1.0.0
 Text Domain: fcon
 Domain Path: /lang
 */
@@ -16,7 +16,7 @@ define( 'FCON_FILE', __FILE__ );
 define( 'FCON_PATH', plugin_dir_path( __FILE__ ) );
 define( 'FCON_URL', plugin_dir_url( __FILE__ ) );
 define( 'FCON_BASENAME', plugin_basename( __FILE__ ) );
-define( 'FCON_VERSION', '0.0.2' );
+define( 'FCON_VERSION', '1.0.0' );
 
 
 function fcon_activate_plugin() {
